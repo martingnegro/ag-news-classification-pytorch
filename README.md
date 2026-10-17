@@ -4,11 +4,7 @@
 
 Construir un pipeline reproducible de entrenamiento y validación
 para clasificar noticias en cuatro categorías mediante una red
-neuronal sencilla en PyTorch.
-
-Esta primera etapa establece la base del proyecto. El mismo corpus
-se utilizará en las siguientes etapas de procesamiento de lenguaje
-natural.
+neuronal en PyTorch.
 
 ## Dataset
 
@@ -20,13 +16,6 @@ Los archivos incluyen las columnas `Class Index`, `Title` y
 
 - `data/ag_news_train.csv`: 120.000 noticias, 30.000 por categoría.
 - `data/ag_news_test.csv`: 7.600 noticias, 1.900 por categoría.
-
-El corpus de clasificación fue construido por Xiang Zhang a partir
-de la colección AG de noticias recopiladas por ComeToMyHead.
-
-Referencia: Xiang Zhang, Junbo Zhao y Yann LeCun.
-Character-level Convolutional Networks for Text Classification.
-NeurIPS, 2015.
 
 ## Organización del repositorio
 
@@ -58,8 +47,7 @@ Se utiliza `CountVectorizer` con presencia binaria de palabras,
 conversión a minúsculas y un máximo de 5.000 términos.
 
 El vocabulario se aprende únicamente con entrenamiento y se aplica
-sin reajustarlo a validación. Esta representación indica si una
-palabra aparece en la noticia; no utiliza ponderación TF-IDF.
+sin reajustarlo a validación.
 
 Las matrices se conservan en formato disperso y se convierten a
 tensores por lotes para controlar el uso de memoria.
@@ -146,10 +134,6 @@ azul para entrenamiento y naranja para validación.
 4. Abrir `notebooks/01_pipeline_base_ag_news.ipynb`.
 5. Conectar el entorno y ejecutar todas las celdas en orden.
 
-Los datos se cargan desde el repositorio público. No se necesita
-montar Google Drive ni subir archivos manualmente.
-
-Se requiere conexión a Internet. El experimento se ejecutó en CPU.
 
 ## Dependencias y reproducibilidad
 
